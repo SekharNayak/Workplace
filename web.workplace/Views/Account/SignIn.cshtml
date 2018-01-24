@@ -1,0 +1,49 @@
+﻿@model web.workplace.VM.LoginVM
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+       @using (Html.BeginForm("SignIn", "Account",FormMethod.Post)) {
+
+           @Html.ValidationSummary()
+
+           <h6>SignIn</h6>
+           <hr />
+           <div class="form-group">
+               @Html.LabelFor( m => m.UserName)
+               @Html.TextBoxFor(m => m.UserName, new { name="email" , @class ="form-control" })
+               @Html.ValidationMessageFor( m => m.UserName)
+           </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.TextBoxFor(m => m.Password, new { name = "password", @class = "form-control" , @type="password" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="form-group">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor( m=> m.RememberMe)
+               
+            </div>
+
+            <input type="submit" name="btnLogin" value="Login" class="btn btn-primary" />
+
+       }
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+     
+
