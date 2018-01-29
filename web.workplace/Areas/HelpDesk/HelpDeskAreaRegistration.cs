@@ -17,7 +17,9 @@ namespace web.workplace.Areas.HelpDesk
             context.MapRoute(
                 "HelpDesk_default",
                 "HelpDesk/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                null,
+                new []{ "web.workplace.Areas.HelpDesk.Controllers" }
             );
         }
     }
