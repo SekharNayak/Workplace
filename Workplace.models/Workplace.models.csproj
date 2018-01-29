@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D8138CF9-ECB5-47B6-989A-E84C6939A3AD}</ProjectGuid>
+    <ProjectGuid>{55735705-3990-44D3-AA4A-9ED3C1F3C6B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Workplace.services</RootNamespace>
-    <AssemblyName>Workplace.services</AssemblyName>
+    <RootNamespace>Workplace.models</RootNamespace>
+    <AssemblyName>Workplace.models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,23 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AccountService.cs" />
-    <Compile Include="Account\IAccountService.cs" />
-    <Compile Include="Core\AppService.cs" />
-    <Compile Include="Core\CoreService.cs" />
-    <Compile Include="Core\IAppService.cs" />
-    <Compile Include="Core\ICoreService.cs" />
-    <Compile Include="Core\ISecurityService.cs" />
-    <Compile Include="Core\SecurityServices.cs" />
-    <Compile Include="HelpDesk\HelpDeskService.cs" />
-    <Compile Include="HelpDesk\IHelpDeskService.cs" />
+    <Compile Include="IssueTracking\Issue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Workplace.models\Workplace.models.csproj">
-      <Project>{55735705-3990-44d3-aa4a-9ed3c1f3c6b4}</Project>
-      <Name>Workplace.models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

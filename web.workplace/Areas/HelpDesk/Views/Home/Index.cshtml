@@ -1,1 +1,39 @@
-﻿<h1>Helpdesk home</h1>
+﻿@model IEnumerable<web.workplace.Areas.HelpDesk.VM.IssueLiteVM>
+
+<div class="row">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>IssueName</th>
+                <th>IssueSubject</th>
+                <th>CreatedOn</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Subject
+                    </td>
+                    <td>
+                        @item.Subject
+                    </td>
+                    <td>
+                        @item.CreatedOn.ToShortDateString()
+                    </td>
+                    <td>
+                        @item.CurrentStatus
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details",actionName:"Detail",controllerName:"Issue",routeValues:item.Id,htmlAttributes:null)
+                    </td>
+                </tr>
+            }
+             
+        </tbody>
+    </table>
+</div>
+

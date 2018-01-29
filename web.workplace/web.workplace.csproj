@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.2.0\lib\net45\CommonServiceLocator.dll</HintPath>
       <Private>True</Private>
@@ -186,13 +190,18 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MapperConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\HelpDesk\Controllers\HomeController.cs" />
+    <Compile Include="Areas\HelpDesk\Controllers\IssueController.cs" />
+    <Compile Include="Areas\HelpDesk\Extensions.cs" />
     <Compile Include="Areas\HelpDesk\HelpDeskAreaRegistration.cs" />
+    <Compile Include="Areas\HelpDesk\VM\IssueLiteVM.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,6 +235,8 @@
     <Content Include="Areas\HelpDesk\Views\_ViewStart.cshtml" />
     <Content Include="Areas\HelpDesk\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpDesk\Views\Home\Index.cshtml" />
+    <Content Include="Areas\HelpDesk\Views\Issue\Assigned.cshtml" />
+    <Content Include="Areas\HelpDesk\Views\Issue\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -269,6 +280,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Workplace.models\Workplace.models.csproj">
+      <Project>{55735705-3990-44d3-aa4a-9ed3c1f3c6b4}</Project>
+      <Name>Workplace.models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Workplace.services\Workplace.services.csproj">
       <Project>{d8138cf9-ecb5-47b6-989a-e84c6939a3ad}</Project>
       <Name>Workplace.services</Name>

@@ -15,6 +15,12 @@ namespace web.workplace.VM
     {
         public string ItemText { get; set; }
 
-        public string ItemPath { get; set; }
+        public string ControllerName { get; set; }
+
+        public string ActionName { get; set; }
+
+        public string AreaName { get; set; }
+
+
     }
 }
