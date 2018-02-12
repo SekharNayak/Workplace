@@ -85,6 +85,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -183,11 +187,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\MapperConfig.cs" />
@@ -197,7 +196,13 @@
     <Compile Include="Areas\HelpDesk\Controllers\IssueController.cs" />
     <Compile Include="Areas\HelpDesk\Extensions.cs" />
     <Compile Include="Areas\HelpDesk\HelpDeskAreaRegistration.cs" />
+    <Compile Include="Areas\HelpDesk\VM\AttachedItemVM.cs" />
     <Compile Include="Areas\HelpDesk\VM\IssueLiteVM.cs" />
+    <Compile Include="Areas\HelpDesk\VM\IssueVM.cs" />
+    <Compile Include="Areas\HelpDesk\VM\StatusVM.cs" />
+    <Compile Include="Areas\HelpDesk\VM\TeamVM.cs" />
+    <Compile Include="Areas\HelpDesk\VM\UserVM.cs" />
+    <Compile Include="Areas\HelpDesk\VM\WorkNoteVM.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -237,6 +242,7 @@
     <Content Include="Areas\HelpDesk\Views\Home\Index.cshtml" />
     <Content Include="Areas\HelpDesk\Views\Issue\Assigned.cshtml" />
     <Content Include="Areas\HelpDesk\Views\Issue\Create.cshtml" />
+    <Content Include="Areas\HelpDesk\Views\Shared\FileUploader.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -288,6 +294,9 @@
       <Project>{d8138cf9-ecb5-47b6-989a-e84c6939a3ad}</Project>
       <Name>Workplace.services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

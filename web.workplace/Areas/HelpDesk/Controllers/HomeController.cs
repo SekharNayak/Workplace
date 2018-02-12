@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using web.workplace.Areas.HelpDesk.VM;
 using Workplace.services.HelpDesk;
@@ -20,11 +17,12 @@ namespace web.workplace.Areas.HelpDesk.Controllers
         public ActionResult Index()
         {
             IEnumerable<IssueLiteVM> issues =  null;
+            var status = helpDeskService.GetStatus();
             var issuesCollection = helpDeskService.PopulateUserWall();
             return View(issues.MapIssues(issuesCollection));
         }
-        
 
+       
         protected override void OnException(ExceptionContext filterContext)
         {
             base.OnException(filterContext);

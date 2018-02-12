@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Workplace.models.IssueTracking;
@@ -14,9 +16,32 @@ namespace Workplace.services.HelpDesk
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Status> GetStatus()
+        {
+            HttpClient client = new HttpClient();
+            IEnumerable<Status> statuses = null;
+            try
+            {
+                client.BaseAddress = new Uri("http://localhost:49281/");
+                var response = client.GetAsync("api/status").Result;
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var content = response.Content?.ReadAsStringAsync()?.Result;
+                    statuses = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<Status>>(content);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return statuses;
+        }
+
         public IEnumerable<Issue> PopulateUserWall()
         {
-          return  new List<Issue>() {
+            return new List<Issue>() {
 
                     new Issue() {
 
@@ -46,7 +71,7 @@ namespace Workplace.services.HelpDesk
                     }
             };
 
-            
+
         }
     }
 }

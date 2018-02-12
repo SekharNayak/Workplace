@@ -12,5 +12,8 @@ namespace Workplace.services.HelpDesk
         IEnumerable<Issue> PopulateUserWall();
 
         bool CreateIssue(Issue issue);
+
+
+        IEnumerable<Status> GetStatus();
     }
 }
